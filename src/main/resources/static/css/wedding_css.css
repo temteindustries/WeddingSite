@@ -1,0 +1,196 @@
+
+:root {
+	font-family: 'Parisienne', cursive;
+	font-family: 'Charm', cursive;
+	font-family: 'Cormorant Garamond', serif;
+	--pinklight: #F5E6F3;
+	--goldlight: #ECE6BE; 
+	--golddark: #A18700;
+	--bluedark: #090940;
+	--serif: serif;
+	--script: Parisienne;
+}
+
+
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+
+a {
+	color: var(--golddark);
+	text-decoration: none;
+}
+
+
+.sec1, .sec2 {
+	height: auto;
+	padding: 5px;
+	padding-bottom: 30px;
+	padding-left: 20%;
+	padding-right: 20%;
+	margin: 0px;
+	color: var(--bluedark);
+}
+
+
+.sec1 {
+	background-color: var(--pinklight);
+
+}
+
+.sec2 {
+	background-color: var(--goldlight);
+}
+
+
+.l, .r {
+	min-height: 200px;
+	height: auto;
+}
+
+.l {
+	width: 45%;
+	//margin-left: 300px; 
+	float: left;
+	}
+
+.r {
+	width: 45%;
+	//margin-right: 300px;
+	float: right;
+}
+
+
+.mapouter {
+	border-style: solid;
+	margin-left: auto;
+	margin-right: auto;
+	//position: absolute;
+	text-align: center;
+}
+
+.gmap_canvas{
+	padding: 0px;
+	margin: 0px;
+}
+
+iframe {
+	 width: 100%;
+	 height: 100%;
+}
+
+.menuitem {
+	font-size: 30px;
+	padding: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0px;
+	vertical-align: center;
+}
+
+#menu_bar {
+	background-color: var(--bluedark);
+	height: 50px;
+	text-align: center;
+	top: 0px;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+
+#gallery {
+	margin-top: 50px;
+	padding-bottom: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+		text-align: center;
+		font-family: var(--serif);
+}
+
+#party {
+	height: auto;
+}
+
+#partytable tr td {
+	width: 50%;
+	//border-style: solid;
+}
+
+
+
+#rsvptable{
+	color: var(--bluedark);
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+input[type="submit"] {
+	background-color: var(--bluedark);
+	color: var(--goldlight);
+	border-style: none;
+	font-family: var(--serif);
+	font-size: 20px;
+	margin: 5px;
+	padding: 5px;
+	margin-left: 40%;
+}
+
+input[type="text"], input[type="checkbox"] {
+	background-color: var(--goldlight);
+	color: var(--bluedark);
+	border-style: none;
+	font-family: var(--serif);
+	font-size: 15px;
+	margin: 5px;
+	padding: 5px;
+}
+
+select {
+	background-color: var(--goldlight);
+	color: var(--bluedark);
+	border-style: none;
+	font-family: var(--serif);
+	font-size: 15px;
+	margin: 5px;
+	padding: 5px;
+}
+
+#right {
+	text-align:right;
+	font-weight: bold;
+	}
+
+img {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+
+
+h1, .menuitem {
+	color: var(--golddark);
+	font-family: var(--script);
+}
+
+h1 {
+	font-size: 50px;
+}
+
+h2 {
+	text-transform: uppercase;
+	font-size: 30px;
+}
+
+h3: {
+	font-size: 15px;
+}
+
+p {
+	font-size: 15px;
+}
