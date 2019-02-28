@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class controller {
 
+    @GetMapping("/update")
+    public String index() {
+        return "index.html";
+    }
+
     @PostMapping("/update")
     public ResponseEntity<String> updateGuestList(
             @RequestBody String stmnt) {
