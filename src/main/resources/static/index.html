@@ -30,13 +30,13 @@ function columns() {
 		for (i = 0; i < formrows; i++) { 
 			var newrow = table.insertRow(tableRows);
 			var c0 = newrow.insertCell(0);
-			c0.innerHTML = " <fieldset name='setone'><input type=\"text\" name=\"fname"+i+"\" value=\"First Name\" onfocus=\"this.value = this.value=='First Name'?'':this.value;\" onblur=\"this.value = this.value==''?'First Name':this.value;\"/> ";
+			c0.innerHTML = " <input type=\"text\" name=\"fname"+i+"\" value=\"First Name\" onfocus=\"this.value = this.value=='First Name'?'':this.value;\" onblur=\"this.value = this.value==''?'First Name':this.value;\"/> ";
 			var c1 = newrow.insertCell(1);
 			c1.innerHTML = " <input type=\"text\" name=\"lname"+i+"\" value=\"Last Name\"  onfocus=\"this.value = this.value=='Last Name'?'':this.value;\" onblur=\"this.value = this.value==''?'Last Name':this.value;\" /> ";
 			var c2 = newrow.insertCell(2);
 			c2.innerHTML = ' <input type="checkbox" name="ceremony'+i+'" value="true" checked> ';
 			var c3 = newrow.insertCell(3);
-			c3.innerHTML = ' <input type="checkbox" name="reception'+i+'" value="true" checked></fieldset> ';
+			c3.innerHTML = ' <input type="checkbox" name="reception'+i+'" value="true" checked>';
 		}	
 	} else if (recordsNeeded < haveApplicable) {
 		//if less
@@ -50,6 +50,34 @@ function columns() {
 
 }
 
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
 </script>
 
 
@@ -66,8 +94,25 @@ function columns() {
 	<span class="menuitem"><a href="#registry">Registry</a></span>
 </div>
 
-<div id="gallery" class="sec2" >
-	<img src="images/placeholder.jpg" alt="chapel" width="100%">	
+<div id="gallery" class="sec2">
+
+	<div class="slideshowcontainer">
+	<div class="mySlides fade" id="startslideshow">
+		<img src="images/img3.jpg" id ="ssimage">
+	</div>
+	<div class="mySlides fade">
+		<img src="images/img4.jpg" id ="ssimage">
+	</div>
+	<div class="mySlides fade">
+		<img src="images/img5.jpg" id ="ssimage">
+	</div>
+	
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+
+	
+	
 </div>
 
 <div id="details" class="sec1">
@@ -103,17 +148,17 @@ function columns() {
 	<table id="partytable"><tr>
 	<td><h2>Joseph Temte</h2>
 	<h3>Groom</h3>
-	<p>small blurb about Joe.  see it fits now but if write any more than a few lines worth im afraid it will fall off the edge of the div !!!</p></td>
+	</td>
 	<td><h2>Jessica Livingston</h2>
 	<h3>Bride</h3>
-	<p>I was born in Temple, Texas but I've travelled all over the world.  After high school I returned to Texas to go to UMHB for my Computer Sciences degree.</p></td>
+	</td>
 	</tr><tr>
 	<td><h2>Ishmael Pulczinski</h2>
 	<h3>Best Man</h3>
-	<p>small blurb about Ishmael.  see it fits now but if write any more than a few lines worth im afraid it will fall off the edge of the div !!!</p></td>
+	</td>
 	<td><h2>Abigail Ingram</h2>
 	<h3>Maid of Honor</h3>
-	<p>small blurb about Abby.  see it fits now but if write any more than a few lines worth im afraid it will fall off the edge of the div !!!</p></td>
+	</td>
 	</tr></table>
 	
 	 
@@ -166,10 +211,11 @@ function columns() {
 
 <div class="sec2" id="registry">
 	<h1>Registry</h1>
-	<h3>Target Registry</h3>
+	<p>(Coming Soon)</p>
+	<!--<h3>Target Registry</h3>
 	<h3>Amazon Registry</h3>
 	<h3>Bed Bath & Beyond Registry</h3>
-	<h3>IKEA Registry</h3>
+	<h3>IKEA Registry</h3>-->
 </div>
 
 
