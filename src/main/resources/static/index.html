@@ -30,13 +30,13 @@ function columns() {
 		for (i = 0; i < formrows; i++) { 
 			var newrow = table.insertRow(tableRows);
 			var c0 = newrow.insertCell(0);
-			c0.innerHTML = " <input type=\"text\" name=\"fname\" value=\"First Name\" onfocus=\"this.value = this.value=='First Name'?'':this.value;\" onblur=\"this.value = this.value==''?'First Name':this.value;\"/> ";
+			c0.innerHTML = " <input class=\"rsvpelement\" type=\"text\" name=\"fname\" value=\"First Name\" onfocus=\"this.value = this.value=='First Name'?'':this.value;\" onblur=\"this.value = this.value==''?'First Name':this.value;\"/> ";
 			var c1 = newrow.insertCell(1);
-			c1.innerHTML = " <input type=\"text\" name=\"lname\" value=\"Last Name\"  onfocus=\"this.value = this.value=='Last Name'?'':this.value;\" onblur=\"this.value = this.value==''?'Last Name':this.value;\" /> ";
+			c1.innerHTML = " <input class=\"rsvpelement\" type=\"text\" name=\"lname\" value=\"Last Name\"  onfocus=\"this.value = this.value=='Last Name'?'':this.value;\" onblur=\"this.value = this.value==''?'Last Name':this.value;\" /> ";
 			var c2 = newrow.insertCell(2);
-			c2.innerHTML = ' <input type="checkbox" name="ceremony" value="true" checked> ';
+			c2.innerHTML = ' <select class="rsvpelement"><option value="Attending">Accepts</option><option value="Declining">Declines</option></select> ';
 			var c3 = newrow.insertCell(3);
-			c3.innerHTML = ' <input type="checkbox" name="reception" value="true" checked>';
+			c3.innerHTML = '<select class="rsvpelement"><option value="Attending">Accepts</option><option value="Declining">Declines</option></select>';
 		}	
 	} else if (recordsNeeded < haveApplicable) {
 		//if less
@@ -80,15 +80,37 @@ function showSlides(n) {
 }
 
 function returnJSON(){
-	var btn = document.getElementById("postData");
+	var input = document.getElementById("postData");
 	//aggregate rows here
-	btn.setAttribute("value", "{\"Joe\": \"Temte\"}");
+	var numRows = (document.getElementById("rsvptable").rows.length) -2; //number of table rows with data 
+	var rows = document.getElementsByClassName("rsvpRecord"); //table rows with data
+	var info = document.getElementById("rsvptable"); //table
+	var stuff = "";	
+	
+	for (var i = 0; i < numRows; i++) {
+		//get data from table rows
+		/*var fn = "first";
+		var ln = "last";
+		var ce = "cere";
+		var re = "recept";*/
+		
+		var fn = info.rows[i+2].children[0].children[0].value; 
+		var ln = info.rows[i+2].children[1].children[0].value; 
+		var ce = info.rows[i+2].children[2].children[0].value; 
+		var re = info.rows[i+2].children[3].children[0].value; 
+		
+		//add commas
+		if (i > 0 && i <= numRows) {stuff = stuff + ", ";}
+		
+		stuff = stuff +"\n{\"fName\" : \""+fn+"\", \"lName\" : \""+ln+"\", \"ceremony\" : \""+ce+"\", \"reception\" : \""+re+"\"}";
+		//stuff = stuff +"\n{\"fName\" : \""+fn+"\", \"lName\" : \""+ln+"\", \"status\" : \""+ce+"\"}";
+	}
+	
+	var stuffOuter = "{"+stuff+"}";
+	
+	input.setAttribute("value", stuffOuter.toString());
 }
 </script>
-
-
-
-
 </head>
 <body>
 
@@ -196,11 +218,11 @@ function returnJSON(){
 		<td><h3>Ceremony</h3></td>
 		<td><h3>Reception</h3></td>
 	</tr>
-	<tr> 
-		<td><input type="text" name="fname" value="First Name" onfocus="this.value = this.value=='First Name'?'':this.value;" onblur="this.value = this.value==''?'First Name':this.value;"/> </td>
-		<td><input type="text" name="lname" value="Last Name"  onfocus="this.value = this.value=='Last Name'?'':this.value;" onblur="this.value = this.value==''?'Last Name':this.value;" /></td>
-		<td><input type="checkbox" name="ceremony" value="true" checked></td>
-		<td><input type="checkbox" name="reception" value="true" checked></td>
+	<tr class="rsvpRecord"> 
+		<td><input class="rsvpelement" type="text" name="fname" value="First Name" onfocus="this.value = this.value=='First Name'?'':this.value;" onblur="this.value = this.value==''?'First Name':this.value;"/> </td>
+		<td><input  class="rsvpelement" type="text" name="lname" value="Last Name"  onfocus="this.value = this.value=='Last Name'?'':this.value;" onblur="this.value = this.value==''?'Last Name':this.value;" /></td>
+		<td><select  class="rsvpelement"><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select></td>
+		<td><select  class="rsvpelement"><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select></td>
 	</td>
 	</tr>
 	

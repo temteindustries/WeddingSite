@@ -16,6 +16,7 @@ public class controller {
     @PostMapping("/update")
     public String updateGuestList(
             @RequestBody String stmnt) {
+		//System.out.println("Value Recieved:\n\n"+stmnt);
         sendEmail sendemail = new sendEmail();
         boolean msgSent = sendemail.sendMail(stmnt);
 
@@ -26,6 +27,7 @@ public class controller {
         else{
             System.out.println("Error sending email");
             return"redirect:/home";
-        }
+        } 
+		//return"redirect:/home";
     }
 }

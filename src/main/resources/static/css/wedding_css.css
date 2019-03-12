@@ -159,6 +159,10 @@ select {
 	padding: 5px;
 }
 
+.rsvpelement {
+	width: 100px;
+}
+
 #right {
 	text-align:right;
 	font-weight: bold;
