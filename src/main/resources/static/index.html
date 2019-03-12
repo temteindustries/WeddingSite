@@ -30,13 +30,13 @@ function columns() {
 		for (i = 0; i < formrows; i++) { 
 			var newrow = table.insertRow(tableRows);
 			var c0 = newrow.insertCell(0);
-			c0.innerHTML = " <input type=\"text\" name=\"fname"+i+"\" value=\"First Name\" onfocus=\"this.value = this.value=='First Name'?'':this.value;\" onblur=\"this.value = this.value==''?'First Name':this.value;\"/> ";
+			c0.innerHTML = " <input type=\"text\" name=\"fname\" value=\"First Name\" onfocus=\"this.value = this.value=='First Name'?'':this.value;\" onblur=\"this.value = this.value==''?'First Name':this.value;\"/> ";
 			var c1 = newrow.insertCell(1);
-			c1.innerHTML = " <input type=\"text\" name=\"lname"+i+"\" value=\"Last Name\"  onfocus=\"this.value = this.value=='Last Name'?'':this.value;\" onblur=\"this.value = this.value==''?'Last Name':this.value;\" /> ";
+			c1.innerHTML = " <input type=\"text\" name=\"lname\" value=\"Last Name\"  onfocus=\"this.value = this.value=='Last Name'?'':this.value;\" onblur=\"this.value = this.value==''?'Last Name':this.value;\" /> ";
 			var c2 = newrow.insertCell(2);
-			c2.innerHTML = ' <input type="checkbox" name="ceremony'+i+'" value="true" checked> ';
+			c2.innerHTML = ' <input type="checkbox" name="ceremony" value="true" checked> ';
 			var c3 = newrow.insertCell(3);
-			c3.innerHTML = ' <input type="checkbox" name="reception'+i+'" value="true" checked>';
+			c3.innerHTML = ' <input type="checkbox" name="reception" value="true" checked>';
 		}	
 	} else if (recordsNeeded < haveApplicable) {
 		//if less
@@ -77,6 +77,12 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block"; 
   dots[slideIndex-1].className += " active";
+}
+
+function returnJSON(){
+	var btn = document.getElementById("postData");
+	//aggregate rows here
+	btn.setAttribute("value", "{\"Joe\": \"Temte\"}");
 }
 </script>
 
@@ -166,8 +172,8 @@ function showSlides(n) {
 
 <div class="sec1" id="rsvp">
 	<h1>RSVP</h1>
-	
-	<form action="https://weddingsite.cfapps.io/update" method="post">
+	<!-- https://weddingsite.cfapps.io/update -->
+	<!--<form action="/update" enctype='application/json' method="post">-->
 	<table id="rsvptable">
 	<tr>
 		<td colspan="4" id="right">
@@ -199,8 +205,9 @@ function showSlides(n) {
 	</tr>
 	
   </table>
-  <input type="submit" value="Send my RSVP">
-
+<form action="/update" enctype='text/plain' method="post" onsubmit="returnJSON()">
+	<input id="postData" hidden name='json'>
+	<input type="submit">
 </form>
 	
 	
