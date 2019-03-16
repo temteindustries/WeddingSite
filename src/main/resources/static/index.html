@@ -106,7 +106,7 @@ function returnJSON(){
 		//stuff = stuff +"\n{\"fName\" : \""+fn+"\", \"lName\" : \""+ln+"\", \"status\" : \""+ce+"\"}";
 	}
 	
-	var stuffOuter = "{"+stuff+"}";
+	var stuffOuter = "["+stuff+"]";
 	
 	input.setAttribute("value", stuffOuter.toString());
 }
@@ -193,8 +193,7 @@ function returnJSON(){
 </div>
 
 <div class="sec1" id="rsvp">
-	<h1>RSVP</h1>	
-	<form action="/update" method="post">
+	<h1>RSVP</h1>
 	<table id="rsvptable">
 	<tr>
 		<td colspan="4" id="right">
