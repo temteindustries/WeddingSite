@@ -4,11 +4,12 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 public class sendEmail {
 
-    public Boolean sendMail(String bodyText) {
+    public Boolean sendMail(List<Object> guestList) {
 
         boolean msgSent = false;
 
@@ -38,7 +39,8 @@ public class sendEmail {
             msg.setRecipients(Message.RecipientType.TO, address);
             msg.setSubject("New RSVP");
             msg.setSentDate(new Date());
-            msg.setText(bodyText);
+            String message = "<div style=\"color:red;\">BRIDGEYE</div>";
+            msg.setContent(message, "text/html; charset=utf-8");
             msg.setHeader("XPriority", "1");
             Transport.send(msg);
             System.out.println("Mail has been sent successfully");
