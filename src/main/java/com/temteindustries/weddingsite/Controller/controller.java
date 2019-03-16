@@ -18,6 +18,7 @@ public class controller {
     @PostMapping("/update")
     public String updateGuestList(
             @RequestBody String stmnt) {
+		//System.out.println("Value Recieved:\n\n"+stmnt);
         sendEmail sendemail = new sendEmail();
         stmnt.substring(5); // remove "json=" from stmnt
         GsonJsonParser parser = new GsonJsonParser();
@@ -31,6 +32,7 @@ public class controller {
         else{
             System.out.println("Error sending email");
             return"redirect:/home";
-        }
+        } 
+		//return"redirect:/home";
     }
 }
