@@ -1,12 +1,9 @@
 package com.temteindustries.weddingsite.TemplateEmail;
-
-import com.temteindustries.weddingsite.model.GuestObject;
 import org.springframework.boot.json.GsonJsonParser;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

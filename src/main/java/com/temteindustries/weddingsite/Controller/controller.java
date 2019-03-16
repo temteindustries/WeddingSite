@@ -1,10 +1,14 @@
 package com.temteindustries.weddingsite.Controller;
 
+import com.temteindustries.weddingsite.CSV.CSVGenerator;
+import com.temteindustries.weddingsite.Cache.CacheUtils;
 import com.temteindustries.weddingsite.Email.sendEmail;
-import com.temteindustries.weddingsite.model.GuestObject;
 import org.springframework.boot.json.GsonJsonParser;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.*;
 import java.util.List;
 
 @Controller
@@ -23,6 +27,7 @@ public class controller {
         json = json.substring(0, json.length()-2);
         GsonJsonParser parser = new GsonJsonParser();
         List<Object> guestList = parser.parseList(json);
+        CacheUtils.addToCache(guestList);
         boolean msgSent = sendemail.sendMail(guestList);
 
         if (msgSent){
@@ -34,4 +39,13 @@ public class controller {
             return"redirect:/home";
         }
     }
+
+    @GetMapping(value = "/guestList", produces = MediaType.TEXT_HTML_VALUE)
+    public String getCSV() throws IOException {
+        String CSVString = CSVGenerator.GenerateCSVText();
+        CSVGenerator.GenerateFile(CSVString);
+        return "guestList.html";
+    }
+
 }
+
