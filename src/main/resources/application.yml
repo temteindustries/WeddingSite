@@ -1,0 +1,16 @@
+spring:
+  profiles: develop
+
+cache :
+  url :
+    csv : "http://localhost:8090/getCSV"
+    update: "http://localhost:8090/update"
+
+---
+spring:
+  profiles: production
+
+cache :
+  url :
+    csv : "http://localhost:8090/prod/getCSV"
+    update: "http://localhost:8090/prod/update"
