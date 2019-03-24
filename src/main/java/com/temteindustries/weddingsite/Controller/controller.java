@@ -42,10 +42,6 @@ public class controller {
 
         String dataDirectory = "target/classes/static/GuestList.csv";
         Path file = Paths.get(dataDirectory);
-        if (Files.exists(file)) {
-            Files.delete(file);
-        }
-        //Files.createFile(file);
         String CSVString = CacheService.getCSVCache();
         CSVGenerator.GenerateFile(CSVString);
 
