@@ -24,6 +24,10 @@ a {
 	text-decoration: none;
 }
 
+.regLinks {
+	color: var(--bluedark);
+}
+
 
 .sec1, .sec2 {
 	height: auto;
@@ -131,6 +135,10 @@ h1, h2, h3, h4, h5, h6, p {
 	text-align: center;
 }
 
+form {
+	text-align: center;
+}
+
 input[type="submit"] {
 	background-color: var(--bluedark);
 	color: var(--goldlight);
@@ -139,7 +147,6 @@ input[type="submit"] {
 	font-size: 20px;
 	margin: 5px;
 	padding: 5px;
-	margin-left: 40%;
 }
 
 input[type="text"], input[type="checkbox"] {
@@ -194,8 +201,13 @@ h2 {
 	font-size: 30px;
 }
 
-h3: {
-	font-size: 20px;
+h3 {
+	font-size: 22px;
+}
+
+h4 {
+	visibility: hidden;
+	
 }
 
 p {
