@@ -1,0 +1,25 @@
+spring:
+  profiles: default
+
+cache :
+  url :
+    csv : "http://localhost:8090/getCSV"
+    update: "http://localhost:8090/update"
+
+---
+spring:
+  profiles: develop
+
+cache :
+  url :
+    csv : "https://sheethandler-dev.temtewedding.com/getCSV"
+    update: "https://sheethandler-dev.temtewedding.com/update"
+
+---
+spring:
+  profiles: production
+
+cache :
+  url :
+    csv : "https://sheethandler-prod.temtewedding.com/getCSV"
+    update: "https://sheethandler-prod.temtewedding.com/update"

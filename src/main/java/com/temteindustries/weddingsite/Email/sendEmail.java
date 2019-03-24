@@ -1,5 +1,7 @@
 package com.temteindustries.weddingsite.Email;
 
+import com.temteindustries.weddingsite.TemplateEmail.EmailTemplateObject;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -39,7 +41,7 @@ public class sendEmail {
             msg.setRecipients(Message.RecipientType.TO, address);
             msg.setSubject("New RSVP");
             msg.setSentDate(new Date());
-            String message = "<div style=\"color:red;\">BRIDGEYE</div>";
+            String message = EmailTemplateObject.getHtml(guestList);
             msg.setContent(message, "text/html; charset=utf-8");
             msg.setHeader("XPriority", "1");
             Transport.send(msg);

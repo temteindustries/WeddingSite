@@ -1,14 +1,16 @@
 
 :root {
 	font-family: 'Parisienne', cursive;
+	font-family: 'MrsEavesPetiteCaps', serif;
+	font-family: 'AnnaClaraW00-Regular', cursive;
 	font-family: 'Charm', cursive;
 	font-family: 'Cormorant Garamond', serif;
 	--pinklight: #F5E6F3;
 	--goldlight: #ECE6BE; 
 	--golddark: #A18700;
 	--bluedark: #090940;
-	--serif: serif;
-	--script: Parisienne;
+	--serif: MrsEavesPetiteCaps;
+	--script: AnnaClaraW00-Regular;
 }
 
 body {
@@ -20,6 +22,10 @@ body {
 a {
 	color: var(--golddark);
 	text-decoration: none;
+}
+
+.regLinks {
+	color: var(--bluedark);
 }
 
 
@@ -81,7 +87,7 @@ iframe {
 }
 
 .menuitem {
-	font-size: 30px;
+	font-size: 20px;
 	padding: 0px;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -105,6 +111,7 @@ iframe {
 }
 
 h1, h2, h3, h4, h5, h6, p {
+		text-weight: normal;
 		text-align: center;
 		font-family: var(--serif);
 }
@@ -128,6 +135,10 @@ h1, h2, h3, h4, h5, h6, p {
 	text-align: center;
 }
 
+form {
+	text-align: center;
+}
+
 input[type="submit"] {
 	background-color: var(--bluedark);
 	color: var(--goldlight);
@@ -136,7 +147,6 @@ input[type="submit"] {
 	font-size: 20px;
 	margin: 5px;
 	padding: 5px;
-	margin-left: 40%;
 }
 
 input[type="text"], input[type="checkbox"] {
@@ -159,6 +169,10 @@ select {
 	padding: 5px;
 }
 
+.rsvpelement {
+	width: 100px;
+}
+
 #right {
 	text-align:right;
 	font-weight: bold;
@@ -179,19 +193,25 @@ h1, .menuitem {
 
 h1 {
 	font-size: 50px;
+	text-weight: normal;
 }
 
 h2 {
-	text-transform: uppercase;
+	//text-transform: uppercase;
 	font-size: 30px;
 }
 
-h3: {
-	font-size: 15px;
+h3 {
+	font-size: 22px;
+}
+
+h4 {
+	visibility: hidden;
+	
 }
 
 p {
-	font-size: 15px;
+	font-size: 20px;
 }
 
 
@@ -246,7 +266,7 @@ p {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
+/* Caption text 
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -257,7 +277,7 @@ p {
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
+/* Number text (1/3 etc) 
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -266,7 +286,7 @@ p {
   top: 0;
 }
 
-/* The dots/bullets/indicators */
+/* The dots/bullets/indicators 
 .dot {
   cursor: pointer;
   height: 15px;
