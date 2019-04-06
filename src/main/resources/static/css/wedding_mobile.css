@@ -1,62 +1,46 @@
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
 
 
 /*containers*/
 body {
 	padding: 0px;
-	margin: 0px;
+	margin: 1px;
+	background-color: var(--pinklight);
+
 }
 .sec1, .sec2 {
 	height: auto;
 	padding: 5px;
-	padding-bottom: 30px;
-	padding-left: 20%;
-	padding-right: 20%;
 	margin: 0px;
 	color: var(--bluedark);
-}
-
-
-.sec1 {
 	background-color: var(--pinklight);
-
+	display: none;
+	margin-top: 70px;
 }
-
-.sec2 {
-	background-color: var(--goldlight);
-}
-
 
 .l, .r {
 	min-height: 200px;
 	height: auto;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.l {
-	width: 45%;
-	//margin-left: 300px; 
-	float: left;
-	}
-
-.r {
-	width: 45%;
-	//margin-right: 300px;
-	float: right;
-}
 
 
 /*images*/
 #gallery {
 	margin-top: 50px;
 	padding-bottom: 0px;
+	display: block;
+	width: 100%;
 }
 
 
 img {
-	margin-top: 10px;
-	margin-bottom: 10px;
+	max-width: 100%;
 }
 
 
@@ -95,6 +79,7 @@ h1, .menuitem {
 h1 {
 	font-size: 50px;
 	text-weight: normal;
+	display: none;
 }
 
 h2 {
@@ -117,33 +102,33 @@ p {
 
 
 
-
-
-/*maps*/
+/*maps				NOT WORKING*/
 .mapouter {
-	border-style: solid;
+	border-style: none;
 	margin-left: auto;
 	margin-right: auto;
-	//position: absolute;
 	text-align: center;
+	display: none;
 }
 
 .gmap_canvas{
 	padding: 0px;
 	margin: 0px;
+	display: none;
 }
 
 iframe {
-	 width: 100%;
-	 height: 100%;
+	 width: 0%;
+	 height: 0%;
+	 display: none;
 }
-
+.maps {display:none;}
 
 
 
 /*menu*/
-.menuitem {
-	font-size: 20px;
+.m-bar .menuitem {
+	font-size: 30px;
 	padding: 0px;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -153,18 +138,38 @@ iframe {
 
 #menu_bar {
 	background-color: var(--bluedark);
-	height: 50px;
+	height: 65px;
 	text-align: center;
 	top: 0px;
 	position: fixed;
 	width: 100%;
 	z-index: 10;
 }
-#menu_bar .icon {
-  display: none;
+
+ .m-bar .menuitem:not(:first-child) {
+    display: none;
+  }
+
+.m-bar a.icon {
+    float: right;
+    display: inline;
+	position: fixed;
+	right: 0;
+    top: 0;
 }
-
-
+.m-bar.responsive a.icon {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+.m-bar.responsive .menuitem {
+    display: block;
+	width: 100%;
+    text-align: center;
+	background-color: var(--bluedark);
+  }
+  
+  
 
 /*party table*/
 
@@ -179,8 +184,6 @@ iframe {
 }
 
 
-
-
 /*rsvp table and form*/
 
 #rsvptable{
@@ -188,6 +191,7 @@ iframe {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+	width: 95%
 }
 
 form {
@@ -231,7 +235,7 @@ select {
 #right {
 	text-align:right;
 	font-weight: bold;
-	}
+}
 
 
 	
