@@ -46,6 +46,10 @@ body {
 	float: right;
 }
 
+#last {
+	margin-bottom: 100px;
+}
+
 
 /*images*/
 #gallery {
@@ -124,13 +128,15 @@ p {
 	border-style: solid;
 	margin-left: auto;
 	margin-right: auto;
-	//position: absolute;
 	text-align: center;
+	display: block;
+	margin-bottom: 30px;
 }
 
 .gmap_canvas{
 	padding: 0px;
 	margin: 0px;
+	
 }
 
 iframe {
@@ -232,7 +238,9 @@ select {
 	text-align:right;
 	font-weight: bold;
 	}
-
+#mobileRSVP {
+	display: none;
+}
 
 	
 	
