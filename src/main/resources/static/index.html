@@ -92,10 +92,6 @@ function returnJSON(){
 	
 	for (var i = 0; i < numRows; i++) {
 		//get data from table rows
-		/*var fn = "first";
-		var ln = "last";
-		var ce = "cere";
-		var re = "recept";*/
 		
 		var fn = info.rows[i+2].children[0].children[0].value; 
 		var ln = info.rows[i+2].children[1].children[0].value; 
@@ -105,8 +101,7 @@ function returnJSON(){
 		//add commas
 		if (i > 0 && i <= numRows) {stuff = stuff + ", ";}
 		
-		stuff = stuff +"\n{\"fName\" : \""+fn+"\", \"lName\" : \""+ln+"\", \"ceremony\" : \""+ce+"\", \"reception\" : \""+re+"\"}";
-		//stuff = stuff +"\n{\"fName\" : \""+fn+"\", \"lName\" : \""+ln+"\", \"status\" : \""+ce+"\"}";
+		stuff = stuff +"\n{\"firstname\" : \""+fn+"\", \"lastname\" : \""+ln+"\", \"ceremony\" : \""+ce+"\", \"reception\" : \""+re+"\"}";
 	}
 	
 	var stuffOuter = "["+stuff+"]";
