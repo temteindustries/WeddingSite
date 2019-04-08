@@ -2,9 +2,16 @@
 <html>
 <head>
 <title>Temte Wedding</title>
-<!--<link rel="stylesheet" type="text/css" href="css/wedding_css.css">-->
+
+<meta name="viewport" content="width=device-width, initial-scale = 0.86, maximum-scale=3.0, minimum-scale=0.86">
+
+
+<link rel="stylesheet" media="screen and (min-width: 1000px)"  href="css/wedding_desktop.css">
+<link rel="stylesheet" media="screen and (max-width: 1000px)"  href="css/wedding_css.css">
 <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/wedding_mobile.css">
-<link rel="stylesheet" media="screen and (min-width: 600px)" href="css/wedding_css.css">
+
+
+
 
 <link href="http://db.onlinewebfonts.com/c/07510de44f0dd7addd490fa856f5ad01?family=MrsEavesPetiteCaps" rel="stylesheet" type="text/css"/>
 <link href="http://db.onlinewebfonts.com/c/55eb7428cd480db11be8b65ed0575762?family=AnnaClaraW00-Regular" rel="stylesheet" type="text/css"/>
@@ -53,6 +60,8 @@ function columns() {
 	}
 
 }
+
+
 
 var slideIndex = 1;
 //showSlides(slideIndex);
@@ -180,10 +189,10 @@ var x = document.getElementById("menu_bar");
 		<img src="images/img3.jpg" id ="ssimage">
 	</div>
 	<div class="mySlides fade">
-		<img src="images/img4.jpg" id ="ssimage">
+		<img src="images/img5.jpg" id ="ssimage">
 	</div>
 	<div class="mySlides fade">
-		<img src="images/img5.jpg" id ="ssimage">
+		<img src="images/img4.jpg" id ="ssimage">
 	</div>
 	
 	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -277,23 +286,11 @@ var x = document.getElementById("menu_bar");
   
   <div class="l" id="mobileRSVP">
   
-	<p>Number of Guests:
-	<select id="jsform" onchange="columns();">
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
-		<option value="6">6</option>
-		<option value="7">7</option>
-		<option value="8">8</option>
-	</select></p>
-	
+
 	<input class="rsvpelement" id="fname" type="text" name="fname" value="First Name" onfocus="this.value = this.value=='First Name'?'':this.value;" onblur="this.value = this.value==''?'First Name':this.value;"/>
 <input  class="rsvpelement" id="lname" type="text" name="lname" value="Last Name"  onfocus="this.value = this.value=='Last Name'?'':this.value;" onblur="this.value = this.value==''?'Last Name':this.value;" />
 <select  class="rsvpelement" id="cer" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
 <select  class="rsvpelement" id="rec" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
-  
   
   </div>
   

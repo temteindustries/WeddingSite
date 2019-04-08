@@ -4,15 +4,17 @@
 
 
 /*containers*/
+html {overflow-x: hidden;}
 body {
 	padding: 0px;
 	margin: 1px;
 	background-color: var(--pinklight);
-
+    overflow-x: hidden;
+    width: 100%;
+	position: relative;
 }
 .sec1, .sec2 {
 	height: auto;
-	padding: 5px;
 	margin: 0px;
 	color: var(--bluedark);
 	background-color: var(--pinklight);
@@ -21,26 +23,30 @@ body {
 }
 
 .l, .r {
-	min-height: 200px;
+	min-height: 100px;
 	height: auto;
 	width: 75%;
 	margin-left: auto;
 	margin-right: auto;
+	float: none;
 }
 
+#details {
+	display:block;
+}
 
 
 /*images*/
 #gallery {
+	margin: 0;
 	margin-top: 50px;
-	padding-bottom: 0px;
-	display: block;
+	//padding: 0px 10px 0px 10px;
 	width: 100%;
 }
-
-
 img {
-	max-width: 100%;
+	width: 100%;
+	margin: 10px 0 10px 0;
+	display: block;
 }
 
 
@@ -102,7 +108,7 @@ p {
 
 
 
-/*maps				NOT WORKING*/
+/*maps*/
 .mapouter {
 	border-style: solid;
 	margin-left: auto;
@@ -120,6 +126,8 @@ iframe {
 	 width: 100%;
 	 height: 100%;
 }
+
+
 
 /*menu*/
 .m-bar .menuitem {
@@ -141,7 +149,11 @@ iframe {
 	z-index: 10;
 }
 
- .m-bar .menuitem:not(:first-child) {
+#menu_bar .icon {
+  display: block;
+}
+
+ .m-bar .menuitem:not(:nth-child(2)) {
     display: none;
   }
 
@@ -150,12 +162,12 @@ iframe {
     display: inline;
 	position: fixed;
 	right: 10px;
-    top: 0;
+    top: 10px;
 }
 .m-bar.responsive a.icon {
     position: fixed;
-    right: 0;
-    top: 0;
+    right: 10px;
+    top: 10px;
   }
 .m-bar.responsive .menuitem {
     display: block;
@@ -168,6 +180,11 @@ iframe {
 
 /*party table*/
 
+#once {
+	font-size: 25px;
+	padding-bottom: 10px;
+}
+
 #partytable tr td {
 	width: 400px;
 	//border-style: solid;
@@ -179,6 +196,8 @@ iframe {
 }
 
 
+
+
 /*rsvp table and form*/
 
 #rsvptable{
@@ -187,8 +206,14 @@ iframe {
 
 #mobileRSVP {
 	text-align:center;
+	display: block;
 }
 
+
+.rsvpRecord td {
+	margin: 50px auto 50px auto;
+	width: 50%;
+}
 
 form {
 	text-align: center;
@@ -224,9 +249,9 @@ select {
 	border-style: none;
 	font-family: var(--serif);
 	margin: 5px;
-	padding: 5px;
 	margin-left: auto;
 	margin-right: auto;
+	font-size: 20px;
 }
 
 .rsvpelement {
@@ -252,72 +277,26 @@ select {
 	
 /* Slideshow container */
 .slideshowcontainer {
-  //max-width: 1000px;
+  width: 100%;
   position: relative;
   margin: auto;
 }
 
 .mySlides {
-	display: none;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-}
-
-#startslideshow {
 	display: block;
 }
 
 #ssimage {
-	height: 450px;
-	width: 700px;
+	width: 100%;
+	height: auto;
 }
 
 /* Next & previous buttons */
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: var(--bluedark);
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  display: none;
 }
 
 
