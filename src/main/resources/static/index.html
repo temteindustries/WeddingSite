@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Temte Wedding</title>
 
@@ -120,6 +120,31 @@ function returnJSON(){
 	
 	}
 	
+	
+function returnJSONMobile() {
+
+var input = document.getElementById("postData");
+	//aggregate rows here
+	var info = document.getElementById("rsvptable"); //table
+	var stuff = "";	
+	
+		//get data 
+	
+		var fn = document.getElementById("fname").value; 
+		var fn = document.getElementById("lname").value; 
+		var fn = document.getElementById("cer").value; 
+		var fn = document.getElementById("rec").value; 
+
+		
+		stuff = stuff +"\n{\"firstname\" : \""+fn+"\", \"lastname\" : \""+ln+"\", \"ceremony\" : \""+ce+"\", \"reception\" : \""+re+"\"}";
+	
+	var stuffOuter = "["+stuff+"]";
+	
+	input.setAttribute("value", stuffOuter.toString());
+	
+
+}
+	
 	 
 	
 	
@@ -186,13 +211,13 @@ var x = document.getElementById("menu_bar");
 
 	<div class="slideshowcontainer">
 	<div class="mySlides fade" id="startslideshow">
-		<img src="images/img3.jpg" id ="ssimage">
+		<img src="images/img3.jpg" id ="ssimage" alt="Bella Donna Chapel">
 	</div>
 	<div class="mySlides fade">
-		<img src="images/img5.jpg" id ="ssimage">
+		<img src="images/img5.jpg" id ="ssimage" alt="Bella Donna Chapel">
 	</div>
 	<div class="mySlides fade">
-		<img src="images/img4.jpg" id ="ssimage">
+		<img src="images/img4.jpg" id ="ssimage" alt="Paris, Christmas 2016">
 	</div>
 	
 	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -210,13 +235,13 @@ var x = document.getElementById("menu_bar");
 		<h2>Ceremony</h2>
 		<h3>Bella Donna Chapel</h3>
 		<p>6641 Mediterranean Dr, McKinney, TX 75070</p>
-		<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=6641%20Mediterranean%20Dr%2C%20McKinney%2C%20TX%2075070&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
+		<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=6641%20Mediterranean%20Dr%2C%20McKinney%2C%20TX%2075070&t=&z=13&ie=UTF8&iwloc=&output=embed"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
 	</div>
 	<div class="r">
 		<h2>Reception</h2>
 		<h3>The Sanctuary</h3>
 		<p>6633 Virginia Pkwy #102, McKinney, TX 75070</p>
-		<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=%3E6633%20Virginia%20Pkwy%20%23102%2C%20McKinney%2C%20TX%2075070&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
+		<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=%3E6633%20Virginia%20Pkwy%20%23102%2C%20McKinney%2C%20TX%2075070&t=&z=13&ie=UTF8&iwloc=&output=embed"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
 	</div>
 	<h2>Parking</h2>
 	<p>700 Adriatic Pkwy, McKinney, TX 75070</p>
@@ -235,8 +260,8 @@ var x = document.getElementById("menu_bar");
 	<div class="r"><h2>Jessica Livingston</h2>
 	<h3>Bride</h3>
 	</div>
-	<div class="l"><tr>
-	<td><h2>Ishmael Pulczinski</h2>
+	<div class="l">
+	<h2>Ishmael Pulczinski</h2>
 	<h3>Best Man</h3>
 	</div>
 	<div class="r"><h2>Abigail Ingram</h2>
@@ -246,6 +271,10 @@ var x = document.getElementById("menu_bar");
 	 	<h4>spacerspacerspacerspacerspacerspacerspacer</h4>
 
 </div>
+
+
+
+
 
 <div class="sec1" id="rsvp">
 	<h1>RSVP</h1>
@@ -279,11 +308,18 @@ var x = document.getElementById("menu_bar");
 		<td><input  class="rsvpelement" type="text" name="lname" value="Last Name"  onfocus="this.value = this.value=='Last Name'?'':this.value;" onblur="this.value = this.value==''?'Last Name':this.value;" /></td>
 		<td><select  class="rsvpelement"><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select></td>
 		<td><select  class="rsvpelement"><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select></td>
-	</td>
 	</tr>
 	
+
+	
+  
   </table>
   
+  <form action="/update" enctype='text/plain' method="post" onsubmit="returnJSON()" id="tableform">
+	<input id="postData" hidden name='json'>
+	<input type="submit">
+	</form>
+
   <div class="l" id="mobileRSVP">
   
 
@@ -291,14 +327,14 @@ var x = document.getElementById("menu_bar");
 <input  class="rsvpelement" id="lname" type="text" name="lname" value="Last Name"  onfocus="this.value = this.value=='Last Name'?'':this.value;" onblur="this.value = this.value==''?'Last Name':this.value;" />
 <select  class="rsvpelement" id="cer" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
 <select  class="rsvpelement" id="rec" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
-  
-  </div>
-  
-  
-<form action="/update" enctype='text/plain' method="post" onsubmit="returnJSON()">
+    
+<form action="/update" enctype='text/plain' method="post" onsubmit="returnJSONMobile()">
 	<input id="postData" hidden name='json'>
 	<input type="submit">
 </form>
+  </div>
+  
+
 	
 </div>
 
@@ -317,7 +353,7 @@ var x = document.getElementById("menu_bar");
 		<p>(972) 727-2000</p>
 	</div>
 	<div class="r">		
-		<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=205%20N%20Central%20Expy%2C%20Allen%2C%20TX%2075013&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
+		<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=205%20N%20Central%20Expy%2C%20Allen%2C%20TX%2075013&t=&z=13&ie=UTF8&iwloc=&output=embed"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
 	</div>
 	<h4>This is invisible! I have the one ring to rule them all!</h4>
 	<br/>

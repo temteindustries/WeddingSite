@@ -200,7 +200,7 @@ iframe {
 
 /*rsvp table and form*/
 
-#rsvptable{
+#rsvptable, #tableform{
 	display: none;
 }
 
