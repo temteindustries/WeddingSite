@@ -7,7 +7,7 @@
 
 
 <link rel="stylesheet" media="screen and (min-width: 1000px)"  href="css/wedding_desktop.css">
-<link rel="stylesheet" media="screen and (max-width: 1000px)"  href="css/wedding_css.css">
+<link rel="stylesheet" media="screen and (max-width: 1000px)"  href="css/wedding_tablet.css">
 <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/wedding_mobile.css">
 
 
@@ -123,17 +123,17 @@ function returnJSON(){
 	
 function returnJSONMobile() {
 
+
 var input = document.getElementById("postData");
 	//aggregate rows here
-	var info = document.getElementById("rsvptable"); //table
 	var stuff = "";	
 	
 		//get data 
 	
 		var fn = document.getElementById("fname").value; 
-		var fn = document.getElementById("lname").value; 
-		var fn = document.getElementById("cer").value; 
-		var fn = document.getElementById("rec").value; 
+		var ln = document.getElementById("lname").value; 
+		var ce = document.getElementById("cer").value; 
+		var re = document.getElementById("rec").value; 
 
 		
 		stuff = stuff +"\n{\"firstname\" : \""+fn+"\", \"lastname\" : \""+ln+"\", \"ceremony\" : \""+ce+"\", \"reception\" : \""+re+"\"}";
