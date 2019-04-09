@@ -1,0 +1,304 @@
+
+
+@media only screen and (max-width: 600px) {
+
+
+/*containers*/
+html {overflow-x: hidden;}
+body {
+	padding: 0px;
+	margin: 1px;
+	background-color: var(--pinklight);
+    overflow-x: hidden;
+    width: 100%;
+	position: relative;
+}
+.sec1, .sec2 {
+	height: auto;
+	margin: 0px;
+	color: var(--bluedark);
+	background-color: var(--pinklight);
+	display: none;
+	//margin-top: 30px;
+}
+
+.l, .r {
+	min-height: 100px;
+	height: auto;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
+#details {
+	display:block;
+}
+
+
+/*images*/
+#gallery {
+	margin: 0;
+	margin-top: 50px;
+	//padding: 0px 10px 0px 10px;
+	width: 100%;
+}
+img {
+	width: 100%;
+	margin: 10px 0 10px 0;
+	display: block;
+}
+
+
+
+
+/*fonts*/
+:root {
+	font-family: 'MrsEavesPetiteCaps', serif;
+	font-family: 'AnnaClaraW00-Regular', cursive;
+	--pinklight: #F5E6F3;
+	--goldlight: #ECE6BE; 
+	--golddark: #A18700;
+	--bluedark: #090940;
+	--serif: MrsEavesPetiteCaps;
+	--script: AnnaClaraW00-Regular;
+}
+
+a {
+	color: var(--golddark);
+	text-decoration: none;
+}
+.regLinks {
+	color: var(--bluedark);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+		text-weight: normal;
+		text-align: center;
+		font-family: var(--serif);
+}
+h1, .menuitem {
+	color: var(--golddark);
+	font-family: var(--script);
+}
+
+h1 {
+	font-size: 30px;
+	text-weight: normal;
+	visibility: hidden;
+}
+
+h2 {
+	//text-transform: uppercase;
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 22px;
+}
+
+h4 {
+	visibility: hidden;
+	
+}
+
+p {
+	font-size: 20px;
+}
+
+
+
+/*maps*/
+.mapouter {
+	border-style: solid;
+	margin-left: auto;
+	margin-right: auto;
+	//position: absolute;
+	text-align: center;
+}
+
+.gmap_canvas{
+	padding: 0px;
+	margin: 0px;
+}
+
+iframe {
+	 width: 100%;
+	 height: 100%;
+}
+
+
+
+/*menu*/
+.m-bar .menuitem {
+	font-size: 30px;
+	padding: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0px;
+	vertical-align: center;
+}
+
+#menu_bar {
+	background-color: var(--bluedark);
+	height: 65px;
+	text-align: center;
+	top: 0px;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+
+#menu_bar .icon {
+  display: block;
+}
+
+ .m-bar .menuitem:not(:nth-child(2)) {
+    display: none;
+  }
+
+.m-bar a.icon {
+    float: right;
+    display: inline;
+	position: fixed;
+	right: 10px;
+    top: 10px;
+}
+.m-bar.responsive a.icon {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+  }
+.m-bar.responsive .menuitem {
+    display: block;
+	width: 100%;
+    text-align: center;
+	background-color: var(--bluedark);
+  }
+  
+  
+
+/*party table*/
+
+#once {
+	font-size: 25px;
+	padding-bottom: 10px;
+}
+
+#partytable tr td {
+	width: 400px;
+	//border-style: solid;
+}
+
+#partytable {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+/*rsvp table and form*/
+
+#rsvptable{
+	display: none;
+}
+
+#mobileRSVP {
+	text-align:center;
+	display: block;
+}
+
+
+.rsvpRecord td {
+	margin: 50px auto 50px auto;
+	width: 50%;
+}
+
+form {
+	text-align: center;
+	font-size: 30px;
+}
+
+input[type="submit"] {
+	background-color: var(--bluedark);
+	color: var(--goldlight);
+	border-style: none;
+	font-family: var(--serif);
+	margin: 5px;
+	padding: 5px;
+	display: inline;
+	width: 50%;
+	font-size: 25px;
+}
+
+input[type="text"] {
+	background-color: var(--goldlight);
+	color: var(--bluedark);
+	border-style: none;
+	font-family: var(--serif);
+	margin: 5px;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+select {
+	background-color: var(--goldlight);
+	color: var(--bluedark);
+	border-style: none;
+	font-family: var(--serif);
+	margin: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20px;
+}
+
+.rsvpelement {
+	width: 75%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 25px;
+}
+
+#right {
+	text-align:right;
+	font-weight: bold;
+}
+
+#mobileRSVP p {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+
+	
+	
+/* Slideshow container */
+.slideshowcontainer {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+	display: block;
+}
+
+#ssimage {
+	width: 100%;
+	height: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  display: none;
+}
+
+
+
+}
