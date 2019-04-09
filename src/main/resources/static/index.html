@@ -310,8 +310,16 @@ var x = document.getElementById("menu_bar");
 		<td><select  class="rsvpelement"><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select></td>
 	</tr>
 	
+
+	
+  
   </table>
   
+  <form action="/update" enctype='text/plain' method="post" onsubmit="returnJSON()" id="tableform">
+	<input id="postData" hidden name='json'>
+	<input type="submit">
+	</form>
+
   <div class="l" id="mobileRSVP">
   
 
