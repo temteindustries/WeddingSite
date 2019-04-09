@@ -124,7 +124,7 @@ function returnJSON(){
 function returnJSONMobile() {
 
 
-var input = document.getElementById("postData");
+var input = document.getElementById("postDataMobile");
 	//aggregate rows here
 	var stuff = "";	
 	
@@ -329,7 +329,7 @@ var x = document.getElementById("menu_bar");
 <select  class="rsvpelement" id="rec" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
     
 <form action="/update" enctype='text/plain' method="post" onsubmit="returnJSONMobile()">
-	<input id="postData" hidden name='json'>
+	<input id="postDataMobile" hidden name='json'>
 	<input type="submit">
 </form>
   </div>
