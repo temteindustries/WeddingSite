@@ -322,11 +322,13 @@ var x = document.getElementById("menu_bar");
 
   <div class="l" id="mobileRSVP">
   
-
+	<h3>Guest</h3>
 	<input class="rsvpelement" id="fname" type="text" name="fname" value="First Name" onfocus="this.value = this.value=='First Name'?'':this.value;" onblur="this.value = this.value==''?'First Name':this.value;"/>
-<input  class="rsvpelement" id="lname" type="text" name="lname" value="Last Name"  onfocus="this.value = this.value=='Last Name'?'':this.value;" onblur="this.value = this.value==''?'Last Name':this.value;" />
-<select  class="rsvpelement" id="cer" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
-<select  class="rsvpelement" id="rec" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
+	<input  class="rsvpelement" id="lname" type="text" name="lname" value="Last Name"  onfocus="this.value = this.value=='Last Name'?'':this.value;" onblur="this.value = this.value==''?'Last Name':this.value;" />
+	<h3>Ceremony</h3>
+	<select  class="rsvpelement" id="cer" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
+	<h3>Reception</h3>
+	<select  class="rsvpelement" id="rec" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
     
 <form action="/update" enctype='text/plain' method="post" onsubmit="returnJSONMobile()">
 	<input id="postData" hidden name='json'>
