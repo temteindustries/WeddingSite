@@ -1,0 +1,11 @@
+---
+instances: 1
+applications:
+- name: WeddingSite-prod
+  memory: 1024M
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  host: temtewedding
+
+
+env:
+  SPRING_PROFILES_ACTIVE: production
