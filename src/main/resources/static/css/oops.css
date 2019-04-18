@@ -1,0 +1,108 @@
+@media only screen and (min-width: 650px) {
+
+/*containers*/
+body {
+	padding: 0 20% 0 20%;
+	margin: 0px;
+	max-width: 100%;
+	overflow-x: hidden;
+	background-color: var(--pinklight);
+}
+
+
+/*fonts*/
+:root {
+	font-family: 'MrsEavesPetiteCaps', serif;
+	font-family: 'AnnaClaraW00-Regular', cursive;
+	--pinklight: #F5E6F3;
+	--goldlight: #ECE6BE;
+	--golddark: #A18700;
+	--bluedark: #090940;
+	--serif: MrsEavesPetiteCaps;
+	--script: AnnaClaraW00-Regular;
+}
+
+a {
+	color: var(--golddark);
+	text-decoration: none;
+}
+
+
+h1, h2, h3{
+		text-weight: normal;
+		text-align: center;
+		font-family: var(--serif);
+}
+h1 {
+	color: var(--golddark);
+	font-family: var(--script);
+	font-size: 50px;
+	text-weight: normal;
+}
+
+h2 {
+	//text-transform: uppercase;
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 22px;
+}
+
+
+}
+
+
+@media only screen and (max-width: 650px) {
+
+/*containers*/
+body {
+	padding: 0 5% 0 5%;
+	margin: 0px;
+	max-width: 100%;
+	overflow-x: hidden;
+	background-color: var(--pinklight);
+}
+
+
+/*fonts*/
+:root {
+	font-family: 'MrsEavesPetiteCaps', serif;
+	font-family: 'AnnaClaraW00-Regular', cursive;
+	--pinklight: #F5E6F3;
+	--goldlight: #ECE6BE;
+	--golddark: #A18700;
+	--bluedark: #090940;
+	--serif: MrsEavesPetiteCaps;
+	--script: AnnaClaraW00-Regular;
+}
+
+a {
+	color: var(--golddark);
+	text-decoration: none;
+}
+
+
+h1, h2, h3{
+		text-weight: normal;
+		text-align: center;
+		font-family: var(--serif);
+}
+h1 {
+	color: var(--golddark);
+	font-family: var(--script);
+	font-size: 30px;
+	text-weight: normal;
+}
+
+h2 {
+	//text-transform: uppercase;
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 22px;
+}
+
+
+}
