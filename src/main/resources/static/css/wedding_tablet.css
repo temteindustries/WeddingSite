@@ -1,7 +1,23 @@
 
 @media only screen and (max-width: 1000px) {
 
+@font-face {font-family: "AnnaClaraW00-Regular";
+    src: url("//db.onlinewebfonts.com/t/55eb7428cd480db11be8b65ed0575762.eot"); /* IE9*/
+    src: url("//db.onlinewebfonts.com/t/55eb7428cd480db11be8b65ed0575762.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("//db.onlinewebfonts.com/t/55eb7428cd480db11be8b65ed0575762.woff2") format("woff2"), /* chrome firefox */
+    url("//db.onlinewebfonts.com/t/55eb7428cd480db11be8b65ed0575762.woff") format("woff"), /* chrome firefox */
+    url("//db.onlinewebfonts.com/t/55eb7428cd480db11be8b65ed0575762.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("//db.onlinewebfonts.com/t/55eb7428cd480db11be8b65ed0575762.svg#AnnaClaraW00-Regular") format("svg"); /* iOS 4.1- */
+}
 
+@font-face {font-family: "MrsEavesPetiteCaps";
+    src: url("//db.onlinewebfonts.com/t/07510de44f0dd7addd490fa856f5ad01.eot"); /* IE9*/
+    src: url("//db.onlinewebfonts.com/t/07510de44f0dd7addd490fa856f5ad01.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("//db.onlinewebfonts.com/t/07510de44f0dd7addd490fa856f5ad01.woff2") format("woff2"), /* chrome firefox */
+    url("//db.onlinewebfonts.com/t/07510de44f0dd7addd490fa856f5ad01.woff") format("woff"), /* chrome firefox */
+    url("//db.onlinewebfonts.com/t/07510de44f0dd7addd490fa856f5ad01.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("//db.onlinewebfonts.com/t/07510de44f0dd7addd490fa856f5ad01.svg#MrsEavesPetiteCaps") format("svg"); /* iOS 4.1- */
+}
 /*containers*/
 body {
 	padding: 0px;
