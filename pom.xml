@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.temteindustries</groupId>
 	<artifactId>weddingsite</artifactId>
-	<version>3.0.2</version>
+	<version>3.0.6</version>
 	<name>weddingsite</name>
 
 	<properties>
@@ -62,7 +62,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<finalName>WeddingSite</finalName>
+				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 
