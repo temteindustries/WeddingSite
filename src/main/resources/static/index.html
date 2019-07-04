@@ -3,143 +3,14 @@
 <head>
 <title>Temte Wedding</title>
 
-<meta name="viewport" content="width=device-width, initial-scale = 0.86, maximum-scale=3.0, minimum-scale=0.86">
 
-<link rel="stylesheet" media="screen and (min-width: 1000px)"  href="css/wedding_desktop.css">
-<link rel="stylesheet" media="screen and (max-width: 1000px)"  href="css/wedding_tablet.css">
-<link rel="stylesheet" media="screen and (max-width: 600px)" href="css/wedding_mobile.css">
+<link rel="stylesheet" href="css/wedding.css">
 
 <link rel="icon" 
       type="image/png" 
       href="images/RingFavicon.png">
 
 <script>
-function columns() {
-	//get selected value
-	var n = document.getElementById("jsform");
-	var recordsNeeded = n.options[n.selectedIndex].value;
-			
-
-	//define table and rows present
-	var table = document.getElementById("rsvptable");
-	var tableRows = table.rows.length;
-	var haveApplicable = tableRows-2;
-	var formrows = recordsNeeded-haveApplicable;
-	
-	
-	if (recordsNeeded > haveApplicable) {
-		//if more
-		var i;
-		for (i = 0; i < formrows; i++) { 
-			var newrow = table.insertRow(tableRows);
-			var c0 = newrow.insertCell(0);
-			c0.innerHTML = " <input class=\"rsvpelement\" type=\"text\" name=\"fname\" value=\"First Name\" onfocus=\"this.value = this.value=='First Name'?'':this.value;\" onblur=\"this.value = this.value==''?'First Name':this.value;\"/> ";
-			var c1 = newrow.insertCell(1);
-			c1.innerHTML = " <input class=\"rsvpelement\" type=\"text\" name=\"lname\" value=\"Last Name\"  onfocus=\"this.value = this.value=='Last Name'?'':this.value;\" onblur=\"this.value = this.value==''?'Last Name':this.value;\" /> ";
-			var c2 = newrow.insertCell(2);
-			c2.innerHTML = ' <select class="rsvpelement"><option value="Attending">Accepts</option><option value="Declining">Declines</option></select> ';
-			var c3 = newrow.insertCell(3);
-			c3.innerHTML = '<select class="rsvpelement"><option value="Attending">Accepts</option><option value="Declining">Declines</option></select>';
-		}	
-	} else if (recordsNeeded < haveApplicable) {
-		//if less
-		var j;		
-		var lessRows = haveApplicable-recordsNeeded;
-		for (j = 0; j < lessRows; j++) {
-			table.deleteRow(tableRows-1);
-			tableRows--;
-		}
-	}
-
-}
-
-
-
-var slideIndex = 1;
-//showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1} 
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; 
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block"; 
-}
-
-function returnJSON(){
-	var input = document.getElementById("postData");
-	//aggregate rows here
-	var numRows = (document.getElementById("rsvptable").rows.length) -2; //number of table rows with data 
-	var rows = document.getElementsByClassName("rsvpRecord"); //table rows with data
-	var info = document.getElementById("rsvptable"); //table
-	var stuff = "";	
-	
-	for (var i = 0; i < numRows; i++) {
-		//get data from table rows
-		
-		var fn = info.rows[i+2].children[0].children[0].value; 
-		var ln = info.rows[i+2].children[1].children[0].value; 
-		var ce = info.rows[i+2].children[2].children[0].value; 
-		var re = info.rows[i+2].children[3].children[0].value; 
-		
-		//add commas
-		if (i > 0 && i <= numRows) {stuff = stuff + ", ";}
-		
-		stuff = stuff +"\n{\"firstname\" : \""+fn+"\", \"lastname\" : \""+ln+"\", \"ceremony\" : \""+ce+"\", \"reception\" : \""+re+"\"}";
-	}
-	
-	var stuffOuter = "["+stuff+"]";
-	
-	input.setAttribute("value", stuffOuter.toString());
-	
-	
-	}
-	
-	
-function returnJSONMobile() {
-
-
-var input = document.getElementById("postDataMobile");
-	//aggregate rows here
-	var stuff = "";	
-	
-		//get data 
-	
-		var fn = document.getElementById("fname").value; 
-		var ln = document.getElementById("lname").value; 
-		var ce = document.getElementById("cer").value; 
-		var re = document.getElementById("rec").value; 
-
-		
-		stuff = stuff +"\n{\"firstname\" : \""+fn+"\", \"lastname\" : \""+ln+"\", \"ceremony\" : \""+ce+"\", \"reception\" : \""+re+"\"}";
-	
-	var stuffOuter = "["+stuff+"]";
-	
-	input.setAttribute("value", stuffOuter.toString());
-	
-
-}
-	
-	 
-	
-	
 function menuDrop() {
 var x = document.getElementById("menu_bar");  
 	if (x.className === "m-bar") {
@@ -156,12 +27,8 @@ var x = document.getElementById("menu_bar");
 		x.className = "m-bar";
 	}
   
-	 document.getElementById("menu-g").addEventListener("click", function(){ showSections("gallery", "menu-g"); });
-	 document.getElementById("menu-d").addEventListener("click", function(){ showSections("details", "menu-d"); });
-	 document.getElementById("menu-p").addEventListener("click", function(){ showSections("party", "menu-p"); });
-	 document.getElementById("menu-s").addEventListener("click", function(){ showSections("rsvp", "menu-s"); });
-	 document.getElementById("menu-r").addEventListener("click", function(){ showSections("registry", "menu-r"); });
-	 document.getElementById("menu-h").addEventListener("click", function(){ showSections("hotels", "menu-h"); });
+	 document.getElementById("menu-p").addEventListener("click", function(){ showSections("photos", "menu-p"); });
+	 document.getElementById("menu-a").addEventListener("click", function(){ showSections("address", "menu-a"); });
 
 	}
   
@@ -190,12 +57,8 @@ var x = document.getElementById("menu_bar");
 <body>
 
 <div class="m-bar" id="menu_bar">
-	<span class="menuitem" id="menu-g"><a href="#gallery">Gallery</a></span>
-	<span class="menuitem" id="menu-d"><a href="#details">Details</a></span>
-	<span class="menuitem" id="menu-p"><a href="#party">Wedding Party</a></span>
-	<span class="menuitem" id="menu-s"><a href="#rsvp">RSVP</a></span>
-	<span class="menuitem" id="menu-r"><a href="#registry">Registry</a></span>
-	<span class="menuitem" id="menu-h"><a href="#hotels">Hotels</a></span>
+	<span class="menuitem" id="menu-d"><a href="#photos">Photos</a></span>
+	<span class="menuitem" id="menu-r"><a href="#registry">Address</a></span>
 	<a href="javascript:void(0);" class="icon" onclick="menuDrop()">&#9776;</a>
 </div>
 
@@ -203,154 +66,32 @@ var x = document.getElementById("menu_bar");
 
 	<div class="slideshowcontainer">
 	<div class="mySlides fade" id="startslideshow">
-		<img src="images/img3.jpg" id ="ssimage" alt="Bella Donna Chapel">
-	</div>
-	<div class="mySlides fade">
-		<img src="images/img5.jpg" id ="ssimage" alt="Bella Donna Chapel">
-	</div>
-	<div class="mySlides fade">
-		<img src="images/img4.jpg" id ="ssimage" alt="Paris, Christmas 2016">
+		<img src="images/dipkiss.jpg" id ="ssimage" alt="The Kiss">
 	</div>
 	
-	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-	<a class="next" onclick="plusSlides(1)">&#10095;</a>
 	</div>
-
-	
 	
 </div>
 
-<div id="details" class="sec1">
-	<h1>Details</h1>
-	<h3>23 June 2019 at 4:00pm</h3>
-	<div class="l">
-		<h2>Ceremony</h2>
-		<h3>Bella Donna Chapel</h3>
-		<p>6641 Mediterranean Dr, McKinney, TX 75070</p>
-		<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=6641%20Mediterranean%20Dr%2C%20McKinney%2C%20TX%2075070&t=&z=13&ie=UTF8&iwloc=&output=embed"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
-	</div>
-	<div class="r">
-		<h2>Reception</h2>
-		<h3>The Sanctuary</h3>
-		<p>6633 Virginia Pkwy #102, McKinney, TX 75070</p>
-		<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=%3E6633%20Virginia%20Pkwy%20%23102%2C%20McKinney%2C%20TX%2075070&t=&z=13&ie=UTF8&iwloc=&output=embed"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
-	</div>
-	<h2>Parking</h2>
-	<p>700 Adriatic Pkwy, McKinney, TX 75070</p>
+<div id="photos" class="sec1">
+	<h1>Photos</h1>
+	<h3>Please use the link below to upload any pictures you would like to share into our google drive folder</h3>
+	<p> <a href="https://drive.google.com/drive/folders/1papsage72pvhOtLm9Yq9kcVVi1Pi8nfG?usp=sharing" target="_blank" class="regLinks">upload here</a></p>
+	<h3>The photographers will also be making thier collection available to us soon.  We will post the link to the photos as soon as we can</h3>
+	
 
 </div>
 
-<div class="sec2" id="party" >
-	<h1>Wedding Party</h1>
-	<p id="once">Like all fairy tales, our time together has felt like it has always meant to be.  Despite growing up on opposite sides of the world, God intertwined our paths together from our first days at the University of Mary Hardin-Baylor together, and we have been inseperable ever since.  Our adventures, dreams, and passions have only drawn closer in the four years we've known each other.  We are excited to see what He has in store for us next, and look forward to our Happily Ever After!</p>
-
-
-	<div id="partytable">
-	<div class="l"><h2>Joseph Temte</h2>
-	<h3>Groom</h3>
-	</div>
-	<div class="r"><h2>Jessica Livingston</h2>
-	<h3>Bride</h3>
-	</div>
-	<div class="l">
-	<h2>Ishmael Pulczinski</h2>
-	<h3>Best Man</h3>
-	</div>
-	<div class="r"><h2>Abigail Ingram</h2>
-	<h3>Maid of Honor</h3>
-	</div>
-	</div>
-	 	<h4>spacerspacerspacerspacerspacerspacerspacer</h4>
-
-</div>
-
-
-
-
-
-<div class="sec1" id="rsvp">
-	<h1>RSVP</h1>
-	
-	
-	
-	<table id="rsvptable">
-	<tr>
-		<td colspan="4" id="right">
-			<p>Number of Guests:
-			<select id="jsform" onchange="columns();">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-			</select></p>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2"><h3>Guest</h3></td>
-		<td><h3>Ceremony</h3></td>
-		<td><h3>Reception</h3></td>
-	</tr>
-	<tr class="rsvpRecord"> 
-		<td><input class="rsvpelement" type="text" name="fname" value="First Name" onfocus="this.value = this.value=='First Name'?'':this.value;" onblur="this.value = this.value==''?'First Name':this.value;"/> </td>
-		<td><input  class="rsvpelement" type="text" name="lname" value="Last Name"  onfocus="this.value = this.value=='Last Name'?'':this.value;" onblur="this.value = this.value==''?'Last Name':this.value;" /></td>
-		<td><select  class="rsvpelement"><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select></td>
-		<td><select  class="rsvpelement"><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select></td>
-	</tr>
-	
-
-	
-  
-  </table>
-  
-  <form action="/update" enctype='text/plain' method="post" onsubmit="returnJSON()" id="tableform">
-	<input id="postData" hidden name='json'>
-	<input type="submit" value="Submit">
-	</form>
-
-  <div class="l" id="mobileRSVP">
-  
-	<h3>Guest</h3>
-	<input class="rsvpelement" id="fname" type="text" name="fname" value="First Name" onfocus="this.value = this.value=='First Name'?'':this.value;" onblur="this.value = this.value==''?'First Name':this.value;"/>
-	<input  class="rsvpelement" id="lname" type="text" name="lname" value="Last Name"  onfocus="this.value = this.value=='Last Name'?'':this.value;" onblur="this.value = this.value==''?'Last Name':this.value;" />
-	<h3>Ceremony</h3>
-	<select  class="rsvpelement" id="cer" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
-	<h3>Reception</h3>
-	<select  class="rsvpelement" id="rec" ><option value="Attending">Accepts</option><option  value="Declining">Declines</option></select>
-    
-<form action="/update" enctype='text/plain' method="post" onsubmit="returnJSONMobile()">
-	<input id="postDataMobile" hidden name='json'>
-	<input type="submit" value="Submit">
-</form>
-  </div>
-  
-<p>Please include children on your RSVP submission.</p>
-	
-</div>
 
 <div class="sec2" id="registry">
-	<h1>Registry</h1>
-	<h3><a href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/547348106" target="_blank" class="regLinks">Bed Bath & Beyond</a></h3>
-	<h3><a href="https://www.walmart.com/lists/view-wedding-registry-items?id=7e7dcf43-a4b5-4cbe-9f0e-12bdf349020b" target="_blank" class="regLinks">Walmart</a></h3>
+	<h1>Address</h1>
+	<h3>Our current address has changed, please use the address found below.</h3>
+	<p>2300 Wolf Ranch Parkway, #1306</br>Georgetown, TX 78628</p>
+	<h3>Our registries are still open and we will close them later this month.  They can be found at the links below </h3>
+	<p><a href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/547348106" target="_blank" class="regLinks">Bed Bath & Beyond</a> </p>
+	<p><a href="https://www.walmart.com/lists/view-wedding-registry-items?id=7e7dcf43-a4b5-4cbe-9f0e-12bdf349020b" target="_blank" class="regLinks">Walmart</a></p>
 </div>
 
-<div class="sec1" id="hotels" id="last">
-	<h1>Hotels</h1>
-	<p>The Holiday Inn in Allan, Texas is 20 minutes away from the Bella Donna Chapel and 30 minutes from DFW Airport in Dallas.  Many of the guests will be staying there, so feel free to book in the same hotel.  There are many other hotels in the area to choose from, feel free to select whichever you find most convenient.  Holiday Inn details are below.</p>
-	<div class="l">
-		<h3>Holiday Inn Express & Suites Allen North-Event Center</h3>
-		<p>205 N Central Expy, Allen, TX 75013</p>
-		<p>(972) 727-2000</p>
-	</div>
-	<div class="r">		
-		<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=205%20N%20Central%20Expy%2C%20Allen%2C%20TX%2075013&t=&z=13&ie=UTF8&iwloc=&output=embed"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
-	</div>
-	<h4>This is invisible! I have the one ring to rule them all!</h4>
-	<br/>
-	<h4>One ring to rule them all, One ring to find them, One ring to bring them all, and in the darkness, BIND THEM!</h4>
-	</div>
+
 </body>
 </html>
